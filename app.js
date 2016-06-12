@@ -7,6 +7,7 @@ var bodyParser = require('body-parser');
 
 var routes = require('./routes/index');
 var users = require('./routes/users');
+var music = require('./routes/music');
 
 var app = express();
 
@@ -33,6 +34,7 @@ app.all('*', function(req, res, next) {
 
 app.use('/', routes);
 app.use('/users', users);
+app.use('/music/xusong.mp3',music);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
