@@ -4,7 +4,7 @@ var router = express.Router();
 
 
 /* GET users listing. */
-router.get('/', function(req, res, next) {
+router.get('/weathers', function(req, res, next) {
   res.contentType('json');
   res.send(weather);
   res.end()
