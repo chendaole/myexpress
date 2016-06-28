@@ -2,7 +2,7 @@ var express = require('express');
 var index = express.Router();
 var music = require('./music.js');
 var router = require('./index.js');
-var users = require('./users.js');
+var resources = require('./resources.js');
 
 router.use(function(req ,res ,next){
     console.log('time:',Date.now());
@@ -14,8 +14,8 @@ router.use('/',index);
 
 router.use('/resources/music',music);
 
-router.use('/resources/json',users,function(){
-    console.log("进入该路由");
+router.use('/resources/json',resources,function(){
+    console.log('Time:'+Date.now()+'\n'+'有访问');
 });
 
 module.exports = router;
