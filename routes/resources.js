@@ -2,7 +2,7 @@ var express = require('express');
 var router = express.Router();
 
 var weather = require('../public/json/test.json');
-var homeDate  = require('../public/json/homeData.json');
+var slideData  = require('../public/json/home-sildedata.json');
 
 /* GET users listing. */
 router.get('/test', function(req, res, next) {
@@ -11,9 +11,11 @@ router.get('/test', function(req, res, next) {
   res.end()
 });
 
-router.get('/homeData',function(req, res ,next){
+router.get('/home-slidedata',function(req, res ,next){
+  console.log('请求的URL路径:', req.originalUrl);
+  console.log('ID:', req.params);
   res.contentType('json');
-  res.send(homeDate);
+  res.send(slideData);
   res.end();
 });
 
