@@ -14,7 +14,7 @@ router.use('/',index);
 
 router.use('/resources/music',music);
 
-router.use('/resources/json',resources,function(){
+router.use('/resources',resources,function(){
     console.log('Time:'+Date.now()+'\n'+'有访问');
 });
 
