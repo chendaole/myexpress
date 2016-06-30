@@ -1,5 +1,5 @@
 var express = require('express');
-var db = require('nano')('http://localhost:5984/myexpress');
+var db = require('nano')('http://localhost:5984/onedaypublic');
 
 var router = express.Router();
 
@@ -30,7 +30,7 @@ router.get('/home-cardsdata-test',function(req, res, next){
 
 router.get('/couchDB-home-cardsdata',function(req ,res,next){
   console.log("ready read DB")
-  db.get('_design/cardsdata/_view/cardsdata', function (error, body, headers) {
+  db.get('_design/cdl/_view/publiclog', function (error, body, headers) {
     if(error) { return res.send(error.message, error['status-code']); }
     console.log("success ! GET DB CardsData");
     res.send(body, 200);
